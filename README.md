@@ -7,13 +7,32 @@ See [yt-dlp plugins](https://github.com/yt-dlp/yt-dlp#plugins) for more details.
 
 Requires yt-dlp `2023.01.02` or above.
 
+### Install with pip
+
 You can install this package with pip:
 ```
 python3 -m pip install -U https://github.com/yt-dlp/yt-dlp-sample-plugins/archive/master.zip
 ```
 
-See [installing yt-dlp plugins](https://github.com/yt-dlp/yt-dlp#installing-plugins) for the other methods this plugin package can be installed.
+### Install manually
 
+1. Download the latest release zip from [releases](https://github.com/yt-dlp/yt-dlp-sample-plugins/releases) 
+
+2. Add the zip to one of the [yt-dlp plugin locations](https://github.com/yt-dlp/yt-dlp#installing-plugins)
+
+    - User Plugins
+        - `${XDG_CONFIG_HOME}/yt-dlp/plugins` (recommended on Linux/MacOS)
+        - `~/.yt-dlp/plugins/`
+        - `${APPDATA}/yt-dlp/plugins/` (recommended on Windows)
+    
+    - System Plugins
+       -  `/etc/yt-dlp/plugins/`
+       -  `/etc/yt-dlp-plugins/`
+    
+    - Executable location
+        - Binary: where `<root-dir>/yt-dlp.exe`, `<root-dir>/yt-dlp-plugins/`
+
+For more locations and methods, see [installing yt-dlp plugins](https://github.com/yt-dlp/yt-dlp#installing-plugins) 
 
 ## Development
 

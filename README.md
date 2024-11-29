@@ -37,8 +37,18 @@ For more locations and methods, see [installing yt-dlp plugins](https://github.c
 ## Development
 
 See the [Plugin Development](https://github.com/yt-dlp/yt-dlp/wiki/Plugin-Development) section of the yt-dlp wiki.
+
+### Dependencies
+
 Add required dependencies to the `dependencies` section in the `pyproject.toml`.
-From within the plugin, use an import pattern similar to the following:
+
+#### Bundling with release zip
+
+By default, the [release action](.github/workflows/release.yml) will try to bundle the dependencies in the release zip. 
+For these dependencies to work, they must be pure python modules.
+ 
+From within the plugin, you will also need to use an import pattern similar to the following:
+
 ```py
 import sys
 import pathlib
@@ -46,7 +56,7 @@ import pathlib
 
 import_path = str(pathlib.Path(__file__).parent.parent.parent)
 
-sys.path.insert(0, import_path)
+sys.path.append(0, import_path)
 try:
 	import some_dependency
 
@@ -56,6 +66,8 @@ except ImportError:
 finally:
 	sys.path.remove(import_path)
 ```
+
+If you do not want to bundle the dependencies with the release zip, you can add the dependencies to the exclusion list in the [release action](.github/workflows/release.yml).
 
 ## Release
 

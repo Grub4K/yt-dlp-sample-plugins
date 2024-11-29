@@ -7,7 +7,7 @@ name = "yt-dlp-sample-plugins"
 version = "2023.01.02"
 readme = "README.md"
 requires-python = ">=3.8"
-license = "MIT"
+license = {file = "LICENSE"}
 keywords = ["yt-dlp", "yt-dlp-plugin"]
 authors = [
   { name = "John Doe", email = "johndoe@example.com" },

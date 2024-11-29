@@ -56,7 +56,7 @@ import pathlib
 
 import_path = str(pathlib.Path(__file__).parent.parent.parent)
 
-sys.path.append(0, import_path)
+sys.path.append(import_path)
 try:
 	import some_dependency
 
